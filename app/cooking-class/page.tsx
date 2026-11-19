@@ -20,7 +20,7 @@ import { Footer } from '@/components/shared/Footer';
 import { HeroSection } from '@/components/shared/HeroSection';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { CTASection } from '@/components/shared/CTASection';
-import { TestimonialSection } from '@/components/shared/TestimonialSection';
+
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 import { DemoBadge } from '@/components/shared/DemoBadge';
 import { cookingClassDetailData } from '@/data/cookingClasses';
@@ -397,12 +397,6 @@ export default function CookingClassPage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <TestimonialSection
-          title="What Previous Cooking Guests Said"
-          subtitle="Read honest impressions from fellow international travelers who shared our cooking hearth."
-          limit={3}
-        />
 
         {/* Final CTA */}
         <CTASection

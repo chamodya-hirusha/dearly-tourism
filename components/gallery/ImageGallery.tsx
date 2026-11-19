@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Maximize2, Tag } from 'lucide-react';
+import { Maximize2, Tag, ChevronDown, ChevronUp } from 'lucide-react';
 import { GalleryItem } from '@/types';
 import { Lightbox } from './Lightbox';
 import { DemoBadge } from '../shared/DemoBadge';
@@ -23,11 +23,17 @@ const galleryCategories = [
 export function ImageGallery({ items }: ImageGalleryProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const filtered =
     selectedCategory === 'all'
       ? items
       : items.filter((item) => item.category === selectedCategory);
+
+  const handleCategoryChange = (key: string) => {
+    setSelectedCategory(key);
+    setShowAllMobile(false);
+  };
 
   return (
     <div className="w-full">
@@ -39,7 +45,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
             <button
               key={cat.key}
               type="button"
-              onClick={() => setSelectedCategory(cat.key)}
+              onClick={() => handleCategoryChange(cat.key)}
               className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                 isActive
                   ? 'bg-[#702F42] text-white shadow-xs'
@@ -55,8 +61,12 @@ export function ImageGallery({ items }: ImageGalleryProps) {
       {/* Counter bar */}
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#6A5D63] mb-6 px-1">
         <span>
-          Showing <strong>{filtered.length}</strong> photo
-          {filtered.length === 1 ? '' : 's'}
+          <span className="hidden sm:inline">
+            Showing <strong>{filtered.length}</strong> photo{filtered.length === 1 ? '' : 's'}
+          </span>
+          <span className="sm:hidden">
+            Showing <strong>{!showAllMobile && filtered.length > 6 ? 6 : filtered.length}</strong> of <strong>{filtered.length}</strong> photos
+          </span>
         </span>
         <span className="text-[11px] font-semibold text-[#702F42] bg-white px-2.5 py-1 rounded-full border border-[#E8DCD2]">
           Southern Ruhuna Photography
@@ -65,12 +75,15 @@ export function ImageGallery({ items }: ImageGalleryProps) {
 
       {/* Masonry / Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {filtered.map((item) => {
+        {filtered.map((item, index) => {
+          const isHiddenOnMobile = index >= 6 && !showAllMobile;
           return (
             <div
               key={item.id}
               onClick={() => setActiveItem(item)}
-              className="group relative rounded-2xl overflow-hidden bg-[#E8DCD2] border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer aspect-4/3"
+              className={`group relative rounded-2xl overflow-hidden bg-[#E8DCD2] border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer aspect-4/3 ${
+                isHiddenOnMobile ? 'hidden sm:block' : 'block'
+              }`}
             >
               <Image
                 src={item.imageUrl}
@@ -103,6 +116,29 @@ export function ImageGallery({ items }: ImageGalleryProps) {
           );
         })}
       </div>
+
+      {/* Mobile View More Button */}
+      {filtered.length > 6 && (
+        <div className="mt-8 text-center sm:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAllMobile(!showAllMobile)}
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#702F42] text-white hover:bg-[#592333] shadow-xs transition-colors cursor-pointer"
+          >
+            {showAllMobile ? (
+              <>
+                <span>Show Less</span>
+                <ChevronUp className="w-3.5 h-3.5" />
+              </>
+            ) : (
+              <>
+                <span>View More Photos ({filtered.length - 6})</span>
+                <ChevronDown className="w-3.5 h-3.5" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Lightbox Modal */}
       <Lightbox
