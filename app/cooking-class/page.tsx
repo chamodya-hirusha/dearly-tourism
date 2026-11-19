@@ -12,7 +12,6 @@ import {
   ArrowRight,
   ShieldCheck,
   Award,
-  BookOpen,
   MessageCircle,
 } from 'lucide-react';
 import { Navbar } from '@/components/shared/Navbar';
@@ -24,12 +23,10 @@ import { CTASection } from '@/components/shared/CTASection';
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 import { DemoBadge } from '@/components/shared/DemoBadge';
 import { cookingClassDetailData } from '@/data/cookingClasses';
-import { galleryItemsData } from '@/data/galleryImages';
 import { contactDetails } from '@/data/navigation';
 
 export default function CookingClassPage() {
   const data = cookingClassDetailData;
-  const cookingPhotos = galleryItemsData.filter((i) => i.category === 'cooking' || i.category === 'food').slice(0, 4);
 
   return (
     <>
@@ -290,109 +287,28 @@ export default function CookingClassPage() {
           </div>
         </section>
 
-        {/* What's Included & What to Bring */}
+        {/* What's Included */}
         <section className="py-20 bg-[#F8F3EF]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* Inclusions */}
-              <div className="bg-white rounded-3xl p-8 border border-[#E8DCD2] shadow-xs">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-[#702F42]/10 text-[#702F42] flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5 text-[#702F42]" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-[#30262A]">
-                    Everything That Is Included
-                  </h3>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Inclusions */}
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DCD2] shadow-xs">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-[#702F42]/10 text-[#702F42] flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-[#702F42]" />
                 </div>
-
-                <ul className="space-y-3 text-xs sm:text-sm text-[#6A5D63]">
-                  {data.included.map((inc, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#702F42] shrink-0 mt-0.5" />
-                      <span>{inc}</span>
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#30262A]">
+                  Everything That Is Included
+                </h3>
               </div>
 
-              {/* What to Bring */}
-              <div className="bg-white rounded-3xl p-8 border border-[#E8DCD2] shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-full bg-[#702F42]/10 text-[#702F42] flex items-center justify-center">
-                      <BookOpen className="w-5 h-5 text-[#702F42]" />
-                    </div>
-                    <h3 className="font-serif text-xl font-bold text-[#30262A]">
-                      What to Bring & Prepare
-                    </h3>
-                  </div>
-
-                  <ul className="space-y-3 text-xs sm:text-sm text-[#6A5D63]">
-                    {data.whatToBring.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <Sparkles className="w-4 h-4 text-[#702F42] shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-[#E8DCD2]">
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                    <div className="text-center sm:text-left">
-                      <div className="text-xs text-[#6A5D63]">Experience Rate:</div>
-                      <div className="font-serif text-2xl font-bold text-[#702F42]">
-                        ${data.demoPriceUSD} USD <span className="text-xs font-normal text-[#6A5D63]">/ guest</span>
-                      </div>
-                    </div>
-
-                    <Link
-                      href="/book?experience=cooking-masterclass"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-xs sm:text-sm shadow-md transition-colors w-full sm:w-auto"
-                    >
-                      <Calendar className="w-4 h-4 shrink-0" />
-                      <span>Book Class Now</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Photo Gallery Grid */}
-        <section className="py-20 bg-white border-y border-[#E8DCD2]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Kitchen Moments"
-              title="Class Gallery"
-              subtitle="Real moments of laughing, grinding, and tasting in our garden kitchen."
-            />
-
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-              {cookingPhotos.map((photo) => (
-                <div
-                  key={photo.id}
-                  className="relative aspect-4/3 rounded-2xl overflow-hidden bg-[#E8DCD2] shadow-xs"
-                >
-                  <Image
-                    src={photo.imageUrl}
-                    alt={photo.title}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link
-                href="/gallery"
-                className="text-xs sm:text-sm font-semibold text-[#702F42] hover:underline"
-              >
-                Browse All Photography in Our Full Gallery →
-              </Link>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm text-[#6A5D63]">
+                {data.included.map((inc, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#702F42] shrink-0 mt-0.5" />
+                    <span>{inc}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
