@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { X, Phone, MessageCircle, Calendar, ArrowRight } from 'lucide-react';
@@ -15,6 +15,17 @@ interface MobileNavigationProps {
 export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
   const pathname = usePathname();
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -27,7 +38,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       />
 
       {/* Drawer */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-[#F8F3EF] shadow-2xl flex flex-col justify-between p-6 overflow-y-auto animate-in slide-in-from-right duration-300">
+      <div className="fixed inset-y-0 right-0 w-[85vw] max-w-xs bg-[#F8F3EF] shadow-2xl flex flex-col justify-between p-5 sm:p-6 overflow-y-auto animate-in slide-in-from-right duration-300">
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-[#E8DCD2]">

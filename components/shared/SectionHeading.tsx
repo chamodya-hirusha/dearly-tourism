@@ -38,7 +38,7 @@ export function SectionHeading({
         </div>
       )}
       <h2
-        className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] ${
+        className={`font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.18] ${
           isDark ? 'text-white' : 'text-[#30262A]'
         }`}
       >
@@ -46,7 +46,7 @@ export function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+          className={`mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed ${
             isDark ? 'text-[#E8DCD2]/80' : 'text-[#6A5D63]'
           }`}
         >

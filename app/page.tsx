@@ -51,25 +51,25 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#30262A]/85 via-[#30262A]/45 to-[#30262A]/30" />
           </div>
 
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center text-white flex flex-col items-center">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 text-center text-white flex flex-col items-center">
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-white/15 backdrop-blur-md text-[#E8DCD2] border border-white/20 mb-6 shadow-xs animate-in fade-in slide-in-from-bottom-2 duration-500">
-              <span className="w-2 h-2 rounded-full bg-[#702F42] animate-pulse" />
-              <span>Tissamaharama • Ruhuna Food Heritage • Near Yala</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs uppercase tracking-widest font-semibold bg-white/15 backdrop-blur-md text-[#E8DCD2] border border-white/20 mb-5 sm:mb-6 shadow-xs animate-in fade-in slide-in-from-bottom-2 duration-500 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-[#702F42] animate-pulse shrink-0" />
+              <span className="truncate">Tissamaharama • Ruhuna Food Heritage • Near Yala</span>
             </div>
 
             {/* Exact Required Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.08] drop-shadow-sm animate-in fade-in slide-in-from-bottom-3 duration-700">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] drop-shadow-sm animate-in fade-in slide-in-from-bottom-3 duration-700">
               Discover the Art of Authentic Sri Lankan Cooking.
             </h1>
 
             {/* Exact Required Supporting Text */}
-            <p className="mt-6 text-base sm:text-lg md:text-xl text-[#E8DCD2]/95 max-w-2xl leading-relaxed font-sans font-normal animate-in fade-in slide-in-from-bottom-4 duration-800">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-[#E8DCD2]/95 max-w-2xl leading-relaxed font-sans font-normal animate-in fade-in slide-in-from-bottom-4 duration-800">
               Experience the rich flavours of Sri Lanka through traditional recipes, fresh local ingredients, and warm home-style hospitality in Tissamaharama.
             </p>
 
             {/* Exact Required CTAs */}
-            <div className="mt-9 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-5 duration-900">
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-5 duration-900">
               <Link
                 href="/experiences"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-medium text-sm transition-all duration-200"
@@ -110,7 +110,7 @@ export default function HomePage() {
         </section>
 
         {/* 2. Introduction Section about Dearly Cooking Class */}
-        <section className="py-20 lg:py-28 bg-[#F8F3EF]">
+        <section className="py-16 sm:py-20 lg:py-28 bg-[#F8F3EF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               {/* Left Editorial Visual Collage */}
@@ -201,7 +201,7 @@ export default function HomePage() {
         </section>
 
         {/* 3. Featured Experiences Section */}
-        <section className="py-20 lg:py-24 bg-white border-y border-[#E8DCD2]">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white border-y border-[#E8DCD2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Curated In Tissamaharama"
@@ -340,7 +340,7 @@ export default function HomePage() {
         </section>
 
         {/* 5. Food Photography Gallery Preview */}
-        <section className="py-20 lg:py-24 bg-white border-y border-[#E8DCD2]">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white border-y border-[#E8DCD2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
               <SectionHeading
@@ -383,7 +383,7 @@ export default function HomePage() {
         </section>
 
         {/* 6. Why Choose Dearly Section */}
-        <section className="py-20 lg:py-24 bg-[#702F42] text-white">
+        <section className="py-16 sm:py-20 lg:py-24 bg-[#702F42] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               theme="dark"
@@ -438,7 +438,7 @@ export default function HomePage() {
         <TestimonialSection limit={3} />
 
         {/* 8. Location Section Featuring Tissamaharama & Yala */}
-        <section className="py-20 lg:py-24 bg-white border-t border-[#E8DCD2]">
+        <section className="py-16 sm:py-20 lg:py-24 bg-white border-t border-[#E8DCD2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">

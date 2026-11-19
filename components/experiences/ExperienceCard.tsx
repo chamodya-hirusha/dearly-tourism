@@ -55,9 +55,9 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
 
         {/* Card Body */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6">
           {/* Metadata Row */}
-          <div className="flex items-center gap-4 text-xs text-[#6A5D63] mb-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-[#6A5D63] mb-3">
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-[#702F42]" />
               {experience.duration}
@@ -75,7 +75,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-xl font-bold text-[#30262A] group-hover:text-[#702F42] transition-colors leading-snug">
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-[#30262A] group-hover:text-[#702F42] transition-colors leading-snug">
             <Link href={detailsHref}>{experience.title}</Link>
           </h3>
 
@@ -85,27 +85,27 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           </p>
 
           {/* Short Description */}
-          <p className="mt-3 text-xs sm:text-sm text-[#6A5D63] line-clamp-2 leading-relaxed">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-[#6A5D63] line-clamp-2 leading-relaxed">
             {experience.shortDescription}
           </p>
         </div>
       </div>
 
       {/* Card Actions Footer */}
-      <div className="p-6 pt-0 mt-2 flex items-center gap-2.5">
+      <div className="p-5 sm:p-6 pt-0 mt-2 flex items-center gap-2 sm:gap-2.5">
         <Link
           href={detailsHref}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#F8F3EF] hover:bg-[#E8DCD2] text-[#702F42] transition-colors border border-[#E8DCD2]"
+          className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-1.5 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-semibold bg-[#F8F3EF] hover:bg-[#E8DCD2] text-[#702F42] transition-colors border border-[#E8DCD2] whitespace-nowrap"
         >
           <span>View Details</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 shrink-0" />
         </Link>
 
         <Link
           href={bookHref}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#702F42] hover:bg-[#592333] text-white shadow-xs transition-colors"
+          className="flex-1 inline-flex items-center justify-center gap-1 sm:gap-1.5 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-semibold bg-[#702F42] hover:bg-[#592333] text-white shadow-xs transition-colors whitespace-nowrap"
         >
-          <Calendar className="w-3.5 h-3.5" />
+          <Calendar className="w-3.5 h-3.5 shrink-0" />
           <span>Book Now</span>
         </Link>
       </div>

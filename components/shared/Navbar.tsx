@@ -101,15 +101,15 @@ export function Navbar() {
           </nav>
 
           {/* Right Action Area */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <LanguageSelector isScrolled={isScrolled} />
 
             <Link
               href="/book"
-              className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[#702F42] hover:bg-[#592333] text-white shadow-xs hover:shadow-md transition-all duration-200 active:scale-95"
+              className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[#702F42] hover:bg-[#592333] text-white shadow-xs hover:shadow-md transition-all duration-200 active:scale-95"
             >
               <Calendar className="w-3.5 h-3.5 shrink-0" />
-              <span>Book Experience</span>
+              <span>Book<span className="hidden sm:inline"> Experience</span></span>
             </Link>
 
             {/* Mobile Hamburger Button */}

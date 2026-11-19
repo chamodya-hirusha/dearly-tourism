@@ -49,16 +49,16 @@ export function HeroSection({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center text-white flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 text-center text-white flex flex-col items-center">
         {/* Breadcrumbs if provided */}
         {breadcrumbs && (
-          <nav className="flex items-center gap-1.5 text-xs text-white/70 mb-6 font-medium">
+          <nav className="flex flex-wrap justify-center items-center gap-1.5 text-xs text-white/70 mb-5 sm:mb-6 font-medium">
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
             {breadcrumbs.map((crumb, idx) => (
               <React.Fragment key={idx}>
-                <ChevronRight className="w-3 h-3 text-white/50" />
+                <ChevronRight className="w-3 h-3 text-white/50 shrink-0" />
                 {crumb.href ? (
                   <Link href={crumb.href} className="hover:text-white transition-colors">
                     {crumb.label}
@@ -73,25 +73,25 @@ export function HeroSection({
 
         {/* Eyebrow */}
         {eyebrow && (
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-white/15 backdrop-blur-md text-[#E8DCD2] border border-white/20 mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#D8BFA3]" />
-            <span>{eyebrow}</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs uppercase tracking-widest font-semibold bg-white/15 backdrop-blur-md text-[#E8DCD2] border border-white/20 mb-5 sm:mb-6 shadow-xs max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#D8BFA3] shrink-0" />
+            <span className="truncate">{eyebrow}</span>
           </div>
         )}
 
         {/* Heading */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] drop-shadow-sm">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.12] drop-shadow-sm">
           {title}
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-[#E8DCD2]/90 max-w-2xl leading-relaxed font-sans font-normal">
+        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-[#E8DCD2]/90 max-w-2xl leading-relaxed font-sans font-normal">
           {subtitle}
         </p>
 
         {/* CTAs */}
         {(primaryCtaText || secondaryCtaText) && (
-          <div className="mt-8 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+          <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
             {primaryCtaText && (
               <Link
                 href={primaryCtaLink}

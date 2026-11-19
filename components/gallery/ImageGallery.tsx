@@ -32,7 +32,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
   return (
     <div className="w-full">
       {/* Category Filter Chips */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10">
         {galleryCategories.map((cat) => {
           const isActive = selectedCategory === cat.key;
           return (
@@ -40,7 +40,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
               key={cat.key}
               type="button"
               onClick={() => setSelectedCategory(cat.key)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                 isActive
                   ? 'bg-[#702F42] text-white shadow-xs'
                   : 'bg-white text-[#30262A] hover:bg-[#E8DCD2] border border-[#E8DCD2]'
@@ -53,7 +53,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
       </div>
 
       {/* Counter bar */}
-      <div className="flex items-center justify-between text-xs text-[#6A5D63] mb-6 px-1">
+      <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#6A5D63] mb-6 px-1">
         <span>
           Showing <strong>{filtered.length}</strong> photo
           {filtered.length === 1 ? '' : 's'}
@@ -64,7 +64,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
       </div>
 
       {/* Masonry / Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map((item) => {
           return (
             <div

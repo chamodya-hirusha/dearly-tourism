@@ -33,7 +33,7 @@ export function ExperienceGrid({
   return (
     <div className="w-full">
       {/* Category Filter Controls */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10">
         {filterCategories.map((cat) => {
           const isActive = selectedCategory === cat.key;
           return (
@@ -41,7 +41,7 @@ export function ExperienceGrid({
               key={cat.key}
               type="button"
               onClick={() => setSelectedCategory(cat.key)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
                 isActive
                   ? 'bg-[#702F42] text-white shadow-xs'
                   : 'bg-white text-[#30262A] hover:bg-[#E8DCD2] border border-[#E8DCD2]'

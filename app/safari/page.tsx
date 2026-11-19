@@ -150,7 +150,7 @@ export default function SafariPage() {
               {safariPackagesData.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="bg-[#F8F3EF] rounded-3xl p-8 border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all flex flex-col justify-between"
+                  className="bg-[#F8F3EF] rounded-3xl p-5 sm:p-8 border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#E8DCD2]">
@@ -220,16 +220,16 @@ export default function SafariPage() {
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-[#E8DCD2] flex items-center justify-between">
-                    <span className="text-[11px] text-[#6A5D63]">
+                  <div className="mt-8 pt-6 border-t border-[#E8DCD2] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3.5">
+                    <span className="text-[11px] text-[#6A5D63] text-center sm:text-left">
                       Pickup directly from Dearly Holiday Home
                     </span>
 
                     <Link
                       href={`/book?experience=yala-safari-expedition`}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors w-full sm:w-auto"
                     >
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4 shrink-0" />
                       <span>Book Package</span>
                     </Link>
                   </div>

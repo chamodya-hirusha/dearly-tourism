@@ -31,18 +31,18 @@ export function CTASection({
           <span>Warm Home Hospitality</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight max-w-3xl mx-auto leading-tight">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl mx-auto leading-tight">
           {title}
         </h2>
 
-        <p className="mt-4 text-base sm:text-lg text-[#E8DCD2]/85 max-w-2xl mx-auto leading-relaxed font-sans">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-[#E8DCD2]/85 max-w-2xl mx-auto leading-relaxed font-sans">
           {subtitle}
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
           <Link
             href={primaryButtonLink}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 active:scale-98"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-full bg-white text-[#702F42] hover:bg-[#F8F3EF] font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 active:scale-98"
           >
             <Calendar className="w-4 h-4" />
             <span>{primaryButtonText}</span>
@@ -54,7 +54,7 @@ export function CTASection({
               href={contactDetails.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 font-semibold text-sm sm:text-base transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 font-semibold text-sm sm:text-base transition-all duration-200"
             >
               <MessageCircle className="w-4 h-4 fill-current text-[#25D366]" />
               <span>Ask on WhatsApp</span>
@@ -62,7 +62,7 @@ export function CTASection({
           )}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-[#E8DCD2]/75 pt-4 border-t border-white/15">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-[#E8DCD2]/75 pt-4 border-t border-white/15">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-[#D8BFA3]" />
             Akurugoda, Tissamaharama • 30 mins to Yala Gates

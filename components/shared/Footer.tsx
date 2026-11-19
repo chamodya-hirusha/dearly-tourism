@@ -159,11 +159,11 @@ export function Footer() {
 
 
         {/* Bottom Copyright */}
-        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#E8DCD2]/60">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#E8DCD2]/60 text-center sm:text-left">
           <div>
             © {new Date().getFullYear()} Dearly Cooking Class & Holiday Home. Tissamaharama, Sri Lanka.
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">
             <span>Crafted with Authentic Ruhuna Warmth</span>
             <span>•</span>
             <Link href="/about" className="hover:text-white transition-colors">

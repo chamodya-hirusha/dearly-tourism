@@ -82,7 +82,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Contact Details Card */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="bg-white rounded-3xl p-8 border border-[#E8DCD2] shadow-md space-y-6">
+                <div className="bg-white rounded-3xl p-5 sm:p-8 border border-[#E8DCD2] shadow-md space-y-6">
                   <div>
                     <span className="text-xs font-semibold text-[#702F42] uppercase tracking-wider">
                       Direct Contact Details
@@ -178,7 +178,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Message Form */}
-              <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-[#E8DCD2] shadow-md">
+              <div className="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-[#E8DCD2] shadow-md">
                 <div className="mb-6 pb-4 border-b border-[#E8DCD2]">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#E8DCD2] text-[#702F42] uppercase tracking-wider mb-2">
                     <Sparkles className="w-3.5 h-3.5 text-[#702F42]" />
@@ -322,10 +322,10 @@ export default function ContactPage() {
 
             <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Map Placeholder / Visual */}
-              <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-[#E8DCD2] shadow-md bg-[#F8F3EF] relative min-h-[360px] flex flex-col justify-between p-8">
+              <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-[#E8DCD2] shadow-md bg-[#F8F3EF] relative min-h-[360px] flex flex-col justify-between p-5 sm:p-8">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#702F42] text-white text-xs font-semibold uppercase tracking-wider mb-4">
-                    <Navigation className="w-3.5 h-3.5 text-[#702F42]" />
+                    <Navigation className="w-3.5 h-3.5 text-[#D8BFA3]" />
                     <span>Akurugoda, Tissamaharama</span>
                   </div>
                   <h4 className="font-serif text-2xl font-bold text-[#30262A]">
@@ -337,7 +337,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Styled map graphic representation */}
-                <div className="my-6 p-6 rounded-2xl bg-white border border-[#E8DCD2] text-xs space-y-3">
+                <div className="my-6 p-4 sm:p-6 rounded-2xl bg-white border border-[#E8DCD2] text-xs space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-[#E8DCD2]">
                     <span className="font-semibold text-[#702F42]">GPS Coordinates:</span>
                     <span className="font-mono text-[#6A5D63]">6.2784° N, 81.2882° E</span>
@@ -352,14 +352,14 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
                     href="https://maps.google.com/?q=Tissamaharama+Sri+Lanka"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#702F42] text-white text-xs font-semibold hover:bg-[#592333] transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#702F42] text-white text-xs font-semibold hover:bg-[#592333] transition-colors w-full sm:w-auto"
                   >
-                    <Compass className="w-4 h-4" />
+                    <Compass className="w-4 h-4 shrink-0" />
                     <span>Open in Google Maps</span>
                   </a>
                   <DemoBadge label="Interactive Location Card" />

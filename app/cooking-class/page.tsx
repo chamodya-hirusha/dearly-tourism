@@ -338,9 +338,9 @@ export default function CookingClassPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-[#E8DCD2]">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-xs text-[#6A5D63]">Demo Experience Rate:</div>
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                    <div className="text-center sm:text-left">
+                      <div className="text-xs text-[#6A5D63]">Experience Rate:</div>
                       <div className="font-serif text-2xl font-bold text-[#702F42]">
                         ${data.demoPriceUSD} USD <span className="text-xs font-normal text-[#6A5D63]">/ guest</span>
                       </div>
@@ -348,9 +348,9 @@ export default function CookingClassPage() {
 
                     <Link
                       href="/book?experience=cooking-masterclass"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-xs sm:text-sm shadow-md transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-xs sm:text-sm shadow-md transition-colors w-full sm:w-auto"
                     >
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4 shrink-0" />
                       <span>Book Class Now</span>
                     </Link>
                   </div>

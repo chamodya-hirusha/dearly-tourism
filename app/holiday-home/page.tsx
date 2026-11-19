@@ -188,16 +188,16 @@ export default function HolidayHomePage() {
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-[#E8DCD2] flex flex-wrap items-center justify-between gap-4">
-                      <div className="text-xs text-[#6A5D63]">
+                    <div className="mt-8 pt-6 border-t border-[#E8DCD2] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3.5">
+                      <div className="text-xs text-[#6A5D63] text-center sm:text-left">
                         Includes hot homemade breakfast & bicycles
                       </div>
 
                       <Link
                         href={`/book?experience=holiday-home-stay`}
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors w-full sm:w-auto"
                       >
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-4 h-4 shrink-0" />
                         <span>Reserve {room.name.split(' ')[0]} Room</span>
                       </Link>
                     </div>

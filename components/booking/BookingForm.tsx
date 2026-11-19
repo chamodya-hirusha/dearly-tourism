@@ -261,7 +261,7 @@ export function BookingForm({ initialExperienceId }: BookingFormProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
       {/* Main Interactive Form */}
-      <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-9 border border-[#E8DCD2] shadow-md">
+      <div className="lg:col-span-7 bg-white rounded-3xl p-4 sm:p-7 md:p-9 border border-[#E8DCD2] shadow-md">
         <div className="mb-6 pb-4 border-b border-[#E8DCD2]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#E8DCD2] text-[#702F42] uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5 text-[#702F42]" />
@@ -288,35 +288,35 @@ export function BookingForm({ initialExperienceId }: BookingFormProps) {
                   <div
                     key={exp.id}
                     onClick={() => setValue('experienceId', exp.id, { shouldValidate: true })}
-                    className={`cursor-pointer rounded-xl p-3.5 border transition-all flex items-center justify-between ${
+                    className={`cursor-pointer rounded-xl p-3 sm:p-3.5 border transition-all flex items-center justify-between gap-2 ${
                       isSelected
                         ? 'border-[#702F42] bg-[#F8F3EF] ring-1 ring-[#702F42]'
                         : 'border-[#E8DCD2] hover:border-[#702F42]/40 hover:bg-[#F8F3EF]/40'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                       <input
                         type="radio"
                         value={exp.id}
                         {...register('experienceId')}
                         checked={isSelected}
-                        className="text-[#702F42] focus:ring-[#702F42] h-4 w-4"
+                        className="text-[#702F42] focus:ring-[#702F42] h-4 w-4 shrink-0"
                         readOnly
                       />
-                      <div>
-                        <div className="text-xs sm:text-sm font-semibold text-[#30262A]">
+                      <div className="min-w-0">
+                        <div className="text-xs sm:text-sm font-semibold text-[#30262A] truncate">
                           {exp.title}
                         </div>
-                        <div className="text-[11px] text-[#6A5D63]">
+                        <div className="text-[10px] sm:text-[11px] text-[#6A5D63]">
                           {exp.duration} • {exp.categoryLabel}
                         </div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xs sm:text-sm font-bold text-[#702F42]">
+                    <div className="text-right shrink-0">
+                      <span className="text-xs sm:text-sm font-bold text-[#702F42] whitespace-nowrap">
                         ${exp.priceUSD} USD
                       </span>
-                      <span className="block text-[10px] text-[#6A5D63]">per person</span>
+                      <span className="block text-[10px] text-[#6A5D63] whitespace-nowrap">per person</span>
                     </div>
                   </div>
                 );
