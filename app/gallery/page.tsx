@@ -3,7 +3,6 @@ import { Navbar } from '@/components/shared/Navbar';
 import { Footer } from '@/components/shared/Footer';
 import { HeroSection } from '@/components/shared/HeroSection';
 import { SectionHeading } from '@/components/shared/SectionHeading';
-import { CTASection } from '@/components/shared/CTASection';
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 import { ImageGallery } from '@/components/gallery/ImageGallery';
 import { galleryItemsData } from '@/data/galleryImages';
@@ -39,13 +38,6 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
-
-        <CTASection
-          title="Experience These Moments in Real Life"
-          subtitle="Join us in Tissamaharama for a memorable blend of spice, warmth, and untouched nature."
-          primaryButtonText="Plan Your Visit"
-          primaryButtonLink="/book"
-        />
       </main>
 
       <Footer />
