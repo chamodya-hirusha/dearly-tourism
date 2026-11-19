@@ -18,10 +18,10 @@ export function Footer() {
   return (
     <footer className="bg-[#30262A] text-[#E8DCD2] pt-16 pb-12 border-t border-[#702F42]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        {/* Main Grid: 2 columns on mobile, 12 columns on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="col-span-2 lg:col-span-4 space-y-4">
             <div>
               <h3 className="font-serif text-3xl font-bold text-white tracking-tight">
                 Dearly
@@ -47,8 +47,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Quick Links - Column 1 on mobile */}
+          <div className="col-span-1 lg:col-span-2 space-y-3">
             <h4 className="font-serif text-base font-semibold text-white tracking-wide">
               Explore
             </h4>
@@ -71,89 +71,94 @@ export function Footer() {
               <li>
                 <Link
                   href="/book"
-                  className="text-[#D8BFA3] hover:text-white font-semibold transition-colors flex items-center gap-1"
+                  className="text-[#D8BFA3] hover:text-white font-semibold transition-colors flex items-center gap-1 pt-1"
                 >
-                  <span>Book Experience →</span>
+                  <span>Book Now →</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Experiences Highlights */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Experiences Highlights - Column 2 on mobile */}
+          <div className="col-span-1 lg:col-span-3 space-y-3">
             <h4 className="font-serif text-base font-semibold text-white tracking-wide">
-              Featured Experiences
+              Featured
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#E8DCD2]/80">
               <li>
                 <Link href="/cooking-class" className="hover:text-white transition-colors block">
-                  <span className="text-white font-medium block">Sri Lankan Cooking Class</span>
-                  <span className="text-xs text-[#E8DCD2]/60">Grind spices & cook 6 clay pot curries</span>
+                  <span className="text-white font-medium block">Cooking Class</span>
+                  <span className="text-[11px] sm:text-xs text-[#E8DCD2]/60 line-clamp-1">Clay pot curries</span>
                 </Link>
               </li>
               <li>
                 <Link href="/experiences" className="hover:text-white transition-colors block">
-                  <span className="text-white font-medium block">Traditional Rice & Curry Feast</span>
-                  <span className="text-xs text-[#E8DCD2]/60">Authentic 7-dish lunch with artisan curd</span>
+                  <span className="text-white font-medium block">Rice & Curry</span>
+                  <span className="text-[11px] sm:text-xs text-[#E8DCD2]/60 line-clamp-1">Traditional feast</span>
                 </Link>
               </li>
               <li>
                 <Link href="/safari" className="hover:text-white transition-colors block">
-                  <span className="text-white font-medium block">Yala National Park Safari</span>
-                  <span className="text-xs text-[#E8DCD2]/60">Ethical 4x4 jeep wildlife expeditions</span>
+                  <span className="text-white font-medium block">Yala Safari</span>
+                  <span className="text-[11px] sm:text-xs text-[#E8DCD2]/60 line-clamp-1">4x4 wildlife tours</span>
                 </Link>
               </li>
               <li>
                 <Link href="/holiday-home" className="hover:text-white transition-colors block">
-                  <span className="text-white font-medium block">Boutique Garden Accommodation</span>
-                  <span className="text-xs text-[#E8DCD2]/60">A/C garden suites & quiet village nights</span>
+                  <span className="text-white font-medium block">Holiday Home</span>
+                  <span className="text-[11px] sm:text-xs text-[#E8DCD2]/60 line-clamp-1">Garden suites</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="lg:col-span-3 space-y-3.5">
+          {/* Contact Details - 2 Columns on mobile */}
+          <div className="col-span-2 lg:col-span-3 space-y-3.5 pt-4 lg:pt-0 border-t border-white/10 lg:border-t-0">
             <h4 className="font-serif text-base font-semibold text-white tracking-wide">
               Direct Contact
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-[#E8DCD2]/90">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#D8BFA3] shrink-0 mt-0.5" />
-                <span className="text-xs leading-relaxed">
-                  {contactDetails.address}
-                </span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#D8BFA3] shrink-0" />
-                <a
-                  href={`tel:${contactDetails.phone}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {contactDetails.phoneFormatted}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#D8BFA3] shrink-0" />
-                <a
-                  href={`mailto:${contactDetails.email}`}
-                  className="hover:text-white transition-colors underline-offset-2 hover:underline"
-                >
-                  {contactDetails.email}
-                </a>
-              </li>
-              <li className="pt-2">
-                <a
-                  href={contactDetails.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] text-white text-xs font-semibold hover:bg-[#20ba59] transition-colors shadow-xs"
-                >
-                  <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                  <span>Instant WhatsApp Chat</span>
-                </a>
-              </li>
-            </ul>
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 text-xs sm:text-sm text-[#E8DCD2]/90">
+              <div className="space-y-2.5">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-[#D8BFA3] shrink-0 mt-0.5" />
+                  <span className="text-xs leading-relaxed">
+                    {contactDetails.address}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-[#D8BFA3] shrink-0" />
+                  <a
+                    href={`tel:${contactDetails.phone}`}
+                    className="hover:text-white transition-colors text-xs"
+                  >
+                    {contactDetails.phoneFormatted}
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-[#D8BFA3] shrink-0" />
+                  <a
+                    href={`mailto:${contactDetails.email}`}
+                    className="hover:text-white transition-colors text-xs break-all"
+                  >
+                    {contactDetails.email}
+                  </a>
+                </div>
+                <div className="pt-1">
+                  <a
+                    href={contactDetails.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-semibold hover:bg-[#20ba59] transition-colors shadow-xs"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 fill-current shrink-0" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
