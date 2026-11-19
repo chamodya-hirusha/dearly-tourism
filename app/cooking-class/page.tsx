@@ -50,28 +50,28 @@ export default function CookingClassPage() {
         />
 
         {/* Experience Overview & Quick Stats Sticky Banner */}
-        <section className="bg-white border-b border-[#E8DCD2] py-6">
+        <section className="bg-white border-b border-[#E8DCD2] py-4 sm:py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center justify-between gap-6 text-xs sm:text-sm">
-              <div className="flex items-center gap-6 flex-wrap">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 text-xs sm:text-sm">
+              <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-6">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#702F42]" />
+                  <Clock className="w-4 h-4 text-[#702F42] shrink-0" />
                   <span><strong>Duration:</strong> {data.duration}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#702F42]" />
-                  <span><strong>Group Size:</strong> 2 to 8 guests (Intimate)</span>
+                  <Users className="w-4 h-4 text-[#702F42] shrink-0" />
+                  <span><strong>Group Size:</strong> 2 to 8 guests</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#702F42]" />
+                <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                  <Award className="w-4 h-4 text-[#702F42] shrink-0" />
                   <span><strong>Skill Level:</strong> Beginner to Foodie</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="text-right">
-                  <span className="text-xs text-[#6A5D63]">Demo Rate:</span>
-                  <div className="font-serif text-2xl font-bold text-[#702F42]">
+              <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-4 pt-3 sm:pt-0 border-t border-[#E8DCD2] sm:border-t-0">
+                <div className="text-left sm:text-right">
+                  <span className="text-[11px] sm:text-xs text-[#6A5D63] block">Demo Rate:</span>
+                  <div className="font-serif text-xl sm:text-2xl font-bold text-[#702F42] leading-tight">
                     ${data.demoPriceUSD}{' '}
                     <span className="text-xs font-sans text-[#6A5D63]">USD / guest</span>
                   </div>
@@ -79,7 +79,7 @@ export default function CookingClassPage() {
 
                 <Link
                   href="/book?experience=cooking-masterclass"
-                  className="px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors"
+                  className="px-5 sm:px-6 py-2.5 rounded-full bg-[#702F42] hover:bg-[#592333] text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors whitespace-nowrap"
                 >
                   Reserve Spot
                 </Link>

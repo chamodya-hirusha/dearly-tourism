@@ -162,9 +162,9 @@ export default function SafariPage() {
                           {pkg.title}
                         </h3>
                       </div>
-                      <div className="text-right">
-                        <span className="text-[10px] uppercase text-[#6A5D63]">Demo Rate:</span>
-                        <div className="font-serif text-2xl font-bold text-[#702F42]">
+                      <div className="text-left sm:text-right">
+                        <span className="text-[10px] sm:text-xs uppercase text-[#6A5D63] block">Demo Rate:</span>
+                        <div className="font-serif text-xl sm:text-2xl font-bold text-[#702F42] leading-tight">
                           ${pkg.priceUSD}{' '}
                           <span className="text-xs font-sans text-[#6A5D63]">USD / person</span>
                         </div>

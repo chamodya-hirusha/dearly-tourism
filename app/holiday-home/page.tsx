@@ -137,9 +137,9 @@ export default function HolidayHomePage() {
                         <h3 className="font-serif text-2xl font-bold text-[#30262A]">
                           {room.name}
                         </h3>
-                        <div className="text-right">
-                          <span className="text-xs text-[#6A5D63]">Demo Rate:</span>
-                          <div className="font-serif text-2xl font-bold text-[#702F42]">
+                        <div className="text-left sm:text-right">
+                          <span className="text-[11px] sm:text-xs text-[#6A5D63] block">Demo Rate:</span>
+                          <div className="font-serif text-xl sm:text-2xl font-bold text-[#702F42] leading-tight">
                             ${room.pricePerNightUSD}{' '}
                             <span className="text-xs font-sans text-[#6A5D63]">/ night</span>
                           </div>
