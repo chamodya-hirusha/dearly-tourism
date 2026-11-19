@@ -61,4 +61,16 @@ export const demoTestimonials: Testimonial[] = [
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
     verifiedDemoGuest: true,
   },
+  {
+    id: 'test-6',
+    guestName: 'Sarah & Thomas Jenkins',
+    country: 'Australia',
+    countryFlag: '🇦🇺',
+    experienceTaken: 'Traditional Cooking & Farm Walk',
+    date: 'February 2026',
+    rating: 5,
+    quote: 'The best hospitality we encountered in Sri Lanka! Walking the garden with Dearly to pluck fresh curry leaves, grinding roasted spices on the miris gala, and dining under the stars made our vacation truly magical. Our kids loved every second.',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80',
+    verifiedDemoGuest: true,
+  },
 ];
