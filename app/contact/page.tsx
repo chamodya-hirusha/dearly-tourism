@@ -12,8 +12,6 @@ import {
   MessageCircle,
   Send,
   CheckCircle2,
-  Navigation,
-  Compass,
   Sparkles,
 } from 'lucide-react';
 import { Navbar } from '@/components/shared/Navbar';
@@ -21,7 +19,6 @@ import { Footer } from '@/components/shared/Footer';
 import { HeroSection } from '@/components/shared/HeroSection';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
-import { DemoBadge } from '@/components/shared/DemoBadge';
 import { contactDetails } from '@/data/navigation';
 
 const contactSchema = z.object({
@@ -306,87 +303,6 @@ export default function ContactPage() {
                     </button>
                   </form>
                 )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Location Section with Map Preview & Directions */}
-        <section className="py-20 bg-white border-t border-[#E8DCD2]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              eyebrow="Finding Us"
-              title="Location & Getting to Tissamaharama"
-              subtitle="Located in the scenic Southern Province, Tissamaharama is easily reached from Ella, Mirissa, Galle, or Colombo."
-            />
-
-            <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Map Placeholder / Visual */}
-              <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-[#E8DCD2] shadow-md bg-[#F8F3EF] relative min-h-[360px] flex flex-col justify-between p-5 sm:p-8">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#702F42] text-white text-xs font-semibold uppercase tracking-wider mb-4">
-                    <Navigation className="w-3.5 h-3.5 text-[#D8BFA3]" />
-                    <span>Akurugoda, Tissamaharama</span>
-                  </div>
-                  <h4 className="font-serif text-2xl font-bold text-[#30262A]">
-                    Dearly Cooking Class & Holiday Home
-                  </h4>
-                  <p className="text-xs sm:text-sm text-[#6A5D63] mt-1 max-w-md">
-                    No. 14, Court Road, Akurugoda, Tissamaharama, Sri Lanka.
-                  </p>
-                </div>
-
-                {/* Styled map graphic representation */}
-                <div className="my-6 p-4 sm:p-6 rounded-2xl bg-white border border-[#E8DCD2] text-xs space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-[#E8DCD2]">
-                    <span className="font-semibold text-[#702F42]">GPS Coordinates:</span>
-                    <span className="font-mono text-[#6A5D63]">6.2784° N, 81.2882° E</span>
-                  </div>
-                  <div className="flex items-center justify-between pb-2 border-b border-[#E8DCD2]">
-                    <span className="font-semibold text-[#702F42]">Distance to Yala Gates:</span>
-                    <span className="text-[#6A5D63]">28 km (approx. 30 min drive)</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-[#702F42]">Distance to Tissa Lake:</span>
-                    <span className="text-[#6A5D63]">1.5 km (5 min cycle)</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                  <a
-                    href="https://maps.google.com/?q=Tissamaharama+Sri+Lanka"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#702F42] text-white text-xs font-semibold hover:bg-[#592333] transition-colors w-full sm:w-auto"
-                  >
-                    <Compass className="w-4 h-4 shrink-0" />
-                    <span>Open in Google Maps</span>
-                  </a>
-                  <DemoBadge label="Interactive Location Card" />
-                </div>
-              </div>
-
-              {/* Transit times list */}
-              <div className="lg:col-span-5 space-y-4">
-                <h4 className="font-serif text-xl font-bold text-[#30262A]">
-                  Approximate Travel Times:
-                </h4>
-                <div className="space-y-3 text-xs sm:text-sm">
-                  {[
-                    { from: 'From Ella', time: '2.5 Hours', mode: 'Scenic downhill drive via Wellawaya' },
-                    { from: 'From Mirissa / Tangalle', time: '1.5 – 2 Hours', mode: 'Along the scenic southern coastal highway' },
-                    { from: 'From Galle Fort', time: '2.5 Hours', mode: 'Via Southern Expressway (E01) to Mattala exit' },
-                    { from: 'From Colombo Airport (CMB)', time: '3.5 – 4 Hours', mode: 'Direct expressway via Southern Highway' },
-                  ].map((route, rIdx) => (
-                    <div key={rIdx} className="p-4 rounded-2xl bg-[#F8F3EF] border border-[#E8DCD2]">
-                      <div className="flex items-center justify-between">
-                        <strong className="text-[#702F42]">{route.from}</strong>
-                        <span className="font-bold text-[#702F42]">{route.time}</span>
-                      </div>
-                      <p className="text-[11px] text-[#6A5D63] mt-0.5">{route.mode}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
