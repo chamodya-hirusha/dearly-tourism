@@ -24,6 +24,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
   const [showAllMobile, setShowAllMobile] = useState(false);
+  const [showAllDesktop, setShowAllDesktop] = useState(false);
 
   const filtered =
     selectedCategory === 'all'
@@ -33,6 +34,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
   const handleCategoryChange = (key: string) => {
     setSelectedCategory(key);
     setShowAllMobile(false);
+    setShowAllDesktop(false);
   };
 
   return (
@@ -62,7 +64,7 @@ export function ImageGallery({ items }: ImageGalleryProps) {
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#6A5D63] mb-6 px-1">
         <span>
           <span className="hidden sm:inline">
-            Showing <strong>{filtered.length}</strong> photo{filtered.length === 1 ? '' : 's'}
+            Showing <strong>{!showAllDesktop && filtered.length > 12 ? 12 : filtered.length}</strong> of <strong>{filtered.length}</strong> photos
           </span>
           <span className="sm:hidden">
             Showing <strong>{!showAllMobile && filtered.length > 6 ? 6 : filtered.length}</strong> of <strong>{filtered.length}</strong> photos
@@ -77,13 +79,22 @@ export function ImageGallery({ items }: ImageGalleryProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map((item, index) => {
           const isHiddenOnMobile = index >= 6 && !showAllMobile;
+          const isHiddenOnDesktop = index >= 12 && !showAllDesktop;
+
+          let visibilityClass = 'block';
+          if (isHiddenOnMobile && isHiddenOnDesktop) {
+            visibilityClass = 'hidden';
+          } else if (isHiddenOnMobile && !isHiddenOnDesktop) {
+            visibilityClass = 'hidden sm:block';
+          } else if (!isHiddenOnMobile && isHiddenOnDesktop) {
+            visibilityClass = 'block sm:hidden';
+          }
+
           return (
             <div
               key={item.id}
               onClick={() => setActiveItem(item)}
-              className={`group relative rounded-2xl overflow-hidden bg-[#E8DCD2] border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer aspect-4/3 ${
-                isHiddenOnMobile ? 'hidden sm:block' : 'block'
-              }`}
+              className={`group relative rounded-2xl overflow-hidden bg-[#E8DCD2] border border-[#E8DCD2] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer aspect-4/3 ${visibilityClass}`}
             >
               <Image
                 src={item.imageUrl}
@@ -134,6 +145,29 @@ export function ImageGallery({ items }: ImageGalleryProps) {
               <>
                 <span>View More Photos ({filtered.length - 6})</span>
                 <ChevronDown className="w-3.5 h-3.5" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
+
+      {/* Desktop See More Text */}
+      {filtered.length > 12 && (
+        <div className="mt-10 text-center hidden sm:block">
+          <button
+            type="button"
+            onClick={() => setShowAllDesktop(!showAllDesktop)}
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#702F42] hover:text-[#592333] hover:underline underline-offset-4 transition-colors cursor-pointer"
+          >
+            {showAllDesktop ? (
+              <>
+                <span>See Less Photos</span>
+                <ChevronUp className="w-4 h-4" />
+              </>
+            ) : (
+              <>
+                <span>See More ({filtered.length - 12} more photos)</span>
+                <ChevronDown className="w-4 h-4" />
               </>
             )}
           </button>
