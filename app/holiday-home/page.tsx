@@ -12,7 +12,6 @@ import {
   Wifi,
   AirVent,
   Coffee,
-  Bike,
   Sparkles,
   ArrowRight,
   ShieldCheck,
@@ -233,50 +232,6 @@ export default function HolidayHomePage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Location & Neighborhood */}
-        <section className="py-20 bg-[#F8F3EF]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-6">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#702F42]">
-                  <span className="w-6 h-px bg-[#702F42]" />
-                  <span>The Akurugoda Neighborhood</span>
-                </div>
-
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#30262A] leading-tight">
-                  Tranquil Village Life Close to Everything.
-                </h2>
-
-                <p className="text-[#6A5D63] text-sm sm:text-base leading-relaxed">
-                  {holidayHomeOverview.locationDescription}
-                </p>
-
-                <div className="space-y-3 text-xs sm:text-sm text-[#30262A]">
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DCD2]">
-                    <MapPin className="w-4 h-4 text-[#702F42] shrink-0" />
-                    <span><strong>Address:</strong> {contactDetails.address}</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E8DCD2]">
-                    <Bike className="w-4 h-4 text-[#702F42] shrink-0" />
-                    <span>Free guest bicycles for sunset lake tours & bird watching</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Photo */}
-              <div className="lg:col-span-6 relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl border border-[#E8DCD2]">
-                <Image
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
-                  alt="Dearly Holiday Home Garden Environment"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
             </div>
           </div>
         </section>
