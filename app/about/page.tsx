@@ -16,10 +16,8 @@ import { Navbar } from '@/components/shared/Navbar';
 import { Footer } from '@/components/shared/Footer';
 import { HeroSection } from '@/components/shared/HeroSection';
 import { SectionHeading } from '@/components/shared/SectionHeading';
-import { CTASection } from '@/components/shared/CTASection';
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 import { DemoBadge } from '@/components/shared/DemoBadge';
-import { contactDetails } from '@/data/navigation';
 
 export default function AboutPage() {
   return (
@@ -193,33 +191,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-
-        {/* Location & Host Address Card */}
-        <section className="py-20 bg-[#F8F3EF]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#30262A]">
-              Visit Us in Akurugoda, Tissamaharama
-            </h3>
-            <p className="text-sm text-[#6A5D63] leading-relaxed max-w-xl mx-auto">
-              {contactDetails.address}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
-              <span className="px-4 py-2 rounded-full bg-white border border-[#E8DCD2] text-[#702F42]">
-                Phone: {contactDetails.phoneFormatted}
-              </span>
-              <span className="px-4 py-2 rounded-full bg-white border border-[#E8DCD2] text-[#702F42]">
-                Email: {contactDetails.email}
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <CTASection
-          title="We Would Love to Welcome You"
-          subtitle="Whether for a single cooking session, an authentic home-style meal, or a peaceful multi-day stay."
-          primaryButtonText="Book an Experience"
-          primaryButtonLink="/book"
-        />
       </main>
 
       <Footer />
