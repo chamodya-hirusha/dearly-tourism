@@ -112,53 +112,48 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Details - 2 Columns on mobile */}
-          <div className="col-span-2 lg:col-span-3 space-y-3.5 pt-4 lg:pt-0 border-t border-white/10 lg:border-t-0">
+          {/* Contact Details */}
+          <div className="col-span-2 lg:col-span-3 space-y-3.5 pt-6 lg:pt-0 border-t border-white/10 lg:border-t-0">
             <h4 className="font-serif text-base font-semibold text-white tracking-wide">
               Direct Contact
             </h4>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 text-xs sm:text-sm text-[#E8DCD2]/90">
-              <div className="space-y-2.5">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-[#D8BFA3] shrink-0 mt-0.5" />
-                  <span className="text-xs leading-relaxed">
-                    {contactDetails.address}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#D8BFA3] shrink-0" />
-                  <a
-                    href={`tel:${contactDetails.phone}`}
-                    className="hover:text-white transition-colors text-xs"
-                  >
-                    {contactDetails.phoneFormatted}
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-2.5">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#D8BFA3] shrink-0" />
-                  <a
-                    href={`mailto:${contactDetails.email}`}
-                    className="hover:text-white transition-colors text-xs break-all"
-                  >
-                    {contactDetails.email}
-                  </a>
-                </div>
-                <div className="pt-1">
-                  <a
-                    href={contactDetails.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-semibold hover:bg-[#20ba59] transition-colors shadow-xs"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current shrink-0" />
-                    <span>WhatsApp</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ul className="space-y-3 text-xs sm:text-sm text-[#E8DCD2]/90">
+              <li className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#D8BFA3] shrink-0 mt-0.5" />
+                <span className="text-xs leading-relaxed">
+                  {contactDetails.address}
+                </span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#D8BFA3] shrink-0" />
+                <a
+                  href={`tel:${contactDetails.phone}`}
+                  className="hover:text-white transition-colors text-xs sm:text-sm"
+                >
+                  {contactDetails.phoneFormatted}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#D8BFA3] shrink-0" />
+                <a
+                  href={`mailto:${contactDetails.email}`}
+                  className="hover:text-white transition-colors text-xs sm:text-sm underline-offset-2 hover:underline whitespace-nowrap"
+                >
+                  {contactDetails.email}
+                </a>
+              </li>
+              <li className="pt-2">
+                <a
+                  href={contactDetails.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] text-white text-xs font-semibold hover:bg-[#20ba59] transition-colors shadow-xs"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                  <span>Instant WhatsApp Chat</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
